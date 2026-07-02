@@ -111,6 +111,18 @@
         <div class="label">LINES</div>
         <div class="value" id="lines">0</div>
       </div>
+      <div class="box">
+        <div class="label">LEVEL</div>
+        <div class="value" id="level">1</div>
+      </div>
+      <div class="box">
+        <div class="label">HIGH</div>
+        <div class="value" id="high">0</div>
+      </div>
+      <div class="box">
+        <div class="label">NEXT</div>
+        <canvas id="next" width="120" height="90" style="margin-top:6px;background:#000;image-rendering:pixelated;"></canvas>
+      </div>
       <div class="hint">
         <span>&lt;- -&gt;</span> MOVE<br>
         <span>^</span> ROTATE<br>
@@ -135,11 +147,17 @@
   const COLS = 10;
   const ROWS = 20;
   const CELL = 30;          // 每格像素
-  const DROP_INTERVAL = 800; // 基础下落间隔(ms)
+  const BASE_DROP = 800;    // 基础下落间隔(ms)
+  const LINES_PER_LEVEL = 10; // 每消除多少行升一级
+  const HIGH_KEY = 'pixel_tetris_high'; // localStorage 键名
 
   const canvas = document.getElementById('game');
   const ctx = canvas.getContext('2d');
   ctx.imageSmoothingEnabled = false;
+
+  const nextCanvas = document.getElementById('next');
+  const nctx = nextCanvas.getContext('2d');
+  nctx.imageSmoothingEnabled = false;
 
   // 7 种标准俄罗斯方块，复古鲜艳配色
   const PIECES = {
@@ -154,7 +172,7 @@
   const TYPES = Object.keys(PIECES);
 
   // ---------- 状态 ----------
-  let grid, cur, pos, score, lines, dropTimer, lastTime, paused, gameOver;
+  let grid, cur, next, pos, score, lines, level, highScore, dropTimer, lastTime, paused, gameOver;
 
   function makeGrid() {
     return Array.from({ length: ROWS }, () => Array(COLS).fill(0));
@@ -170,17 +188,32 @@
     };
   }
 
+  // 读取本地最高分
+  function loadHigh() {
+    const v = parseInt(localStorage.getItem(HIGH_KEY), 10);
+    return Number.isFinite(v) ? v : 0;
+  }
+
+  // 等级决定下落间隔：每级加速约 12%，最低 80ms
+  function dropInterval() {
+    return Math.max(80, BASE_DROP * Math.pow(0.88, level - 1));
+  }
+
   function reset() {
     grid = makeGrid();
     score = 0;
     lines = 0;
+    level = 1;
+    highScore = loadHigh();
     paused = false;
     gameOver = false;
     dropTimer = 0;
     lastTime = 0;
     cur = newPiece();
+    next = newPiece();
     pos = { x: Math.floor(COLS / 2) - Math.floor(cur.shape[0].length / 2), y: 0 };
     updateHUD();
+    drawNext();
     hideOverlay();
   }
 
