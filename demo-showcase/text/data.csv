@@ -1,0 +1,5 @@
+id,name,category,price,in_stock
+1,Mechanical Keyboard,Peripherals,399,true
+2,Wireless Mouse,Peripherals,129,true
+3,4K Monitor,Display,2199,false
+4,USB-C Dock,Peripherals,599,true

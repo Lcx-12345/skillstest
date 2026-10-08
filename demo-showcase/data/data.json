@@ -1,0 +1,15 @@
+{
+  "name": "Trae 演示数据集",
+  "version": "1.0.0",
+  "tags": ["demo", "json"],
+  "metadata": {
+    "generatedBy": "Trae Agent (Write 工具)",
+    "date": "2026-10-08"
+  },
+  "tools": [
+    { "id": 1, "name": "Write", "category": "file", "desc": "创建文件" },
+    { "id": 2, "name": "Grep", "category": "search", "desc": "内容搜索" },
+    { "id": 3, "name": "RunCommand", "category": "terminal", "desc": "执行命令" }
+  ],
+  "stats": { "totalTools": 25, "formatsSupported": 30 }
+}

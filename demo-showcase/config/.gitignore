@@ -1,0 +1,17 @@
+# .gitignore 演示
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Node
+node_modules/
+dist/
+
+# 环境与日志
+.env
+*.log
+
+# IDE
+.idea/
