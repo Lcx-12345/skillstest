@@ -1,0 +1,177 @@
+/* style.css - 图片压缩与格式转换工具，配色沿用 demo-showcase 深色主题 */
+:root {
+  --bg: #0f172a;
+  --card: #1e293b;
+  --accent: #6366f1;
+  --accent2: #22d3ee;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --danger: #f87171;
+  --ok: #34d399;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.hero {
+  text-align: center;
+  padding: 48px 20px 32px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(34, 211, 238, 0.1));
+}
+
+.hero h1 {
+  font-size: 28px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero p { color: var(--muted); }
+
+main { max-width: 960px; margin: 0 auto; padding: 24px 20px 48px; }
+
+section { margin-top: 32px; }
+section h2 { font-size: 20px; margin-bottom: 16px; border-left: 4px solid var(--accent); padding-left: 12px; }
+
+.card {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 16px;
+  border: 1px solid rgba(148, 163, 184, 0.15);
+}
+
+/* 拖拽区 */
+.drop-zone {
+  border: 2px dashed rgba(148, 163, 184, 0.4);
+  border-radius: 12px;
+  padding: 40px 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.drop-zone:hover, .drop-zone.dragover {
+  border-color: var(--accent2);
+  background: rgba(34, 211, 238, 0.06);
+}
+
+.drop-title { font-size: 16px; }
+.drop-hint { font-size: 13px; color: var(--muted); margin-top: 6px; }
+
+.drop-error {
+  margin-top: 10px;
+  color: var(--danger);
+  font-size: 13px;
+}
+
+/* 设置区 */
+.settings {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: flex-end;
+}
+
+.setting-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--muted);
+  min-width: 180px;
+  flex: 1;
+}
+
+.setting-item b { color: var(--accent2); }
+
+select, input[type="number"] {
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 14px;
+}
+
+input[type="range"] { accent-color: var(--accent); }
+
+/* 文件列表 */
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.list-header h2 { margin-bottom: 0; }
+
+.batch-actions { display: flex; gap: 10px; }
+
+button {
+  padding: 10px 24px;
+  border: none;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+button:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4); }
+
+button.secondary { background: rgba(148, 163, 184, 0.2); color: var(--text); }
+
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.file-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+
+.file-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--card);
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  border-radius: 12px;
+  padding: 12px 16px;
+  flex-wrap: wrap;
+}
+
+.file-item img.thumb {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 8px;
+  background: #000; /* 透明 PNG 缩略图不至于和卡片背景混在一起 */
+  flex-shrink: 0;
+}
+
+.file-info { flex: 1; min-width: 200px; }
+.file-info .name { font-size: 14px; word-break: break-all; }
+.file-info .meta { font-size: 12px; color: var(--muted); margin-top: 4px; }
+.file-info .meta .saved { color: var(--ok); font-weight: bold; }
+.file-info .meta .bigger { color: var(--danger); font-weight: bold; }
+
+.file-status { font-size: 13px; min-width: 72px; text-align: center; }
+.file-status.processing { color: var(--accent2); }
+.file-status.done { color: var(--ok); }
+.file-status.failed { color: var(--danger); }
+
+.file-item .remove {
+  background: transparent;
+  color: var(--muted);
+  padding: 4px 8px;
+  font-size: 16px;
+}
+.file-item .remove:hover { color: var(--danger); box-shadow: none; transform: none; }
+
+.empty-tip { color: var(--muted); font-size: 14px; text-align: center; padding: 24px 0; }

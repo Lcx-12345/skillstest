@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>图片压缩与格式转换工具</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <h1>图片压缩与格式转换工具</h1>
+    <p>纯浏览器本地处理 · 支持 WebP / JPG / PNG · 文件不会上传到任何服务器</p>
+  </header>
+
+  <main>
+    <!-- 拖拽 / 选择上传区 -->
+    <section>
+      <div id="drop-zone" class="drop-zone">
+        <p class="drop-title">将图片拖拽到此处</p>
+        <p class="drop-hint">或点击选择文件 · 支持多选 · 支持 webp / jpg / jpeg / png</p>
+        <input type="file" id="file-input" multiple
+               accept="image/webp,image/jpeg,image/png" hidden />
+      </div>
+      <p id="drop-error" class="drop-error" hidden></p>
+    </section>
+
+    <!-- 处理设置 -->
+    <section>
+      <h2>处理设置</h2>
+      <div class="settings card">
+        <label class="setting-item">
+          <span>目标格式</span>
+          <select id="target-format">
+            <option value="auto">保持原格式</option>
+            <option value="image/jpeg">JPG</option>
+            <option value="image/png">PNG</option>
+            <option value="image/webp">WebP</option>
+          </select>
+        </label>
+        <label class="setting-item">
+          <span>压缩质量 <b id="quality-value">0.8</b></span>
+          <input type="range" id="quality" min="0.1" max="1" step="0.05" value="0.8" />
+        </label>
+        <label class="setting-item">
+          <span>最长边缩放（像素，留空不缩放）</span>
+          <input type="number" id="max-edge" min="1" placeholder="例如 1920" />
+        </label>
+      </div>
+    </section>
+
+    <!-- 文件列表与批量操作 -->
+    <section>
+      <div class="list-header">
+        <h2>文件列表</h2>
+        <div class="batch-actions">
+          <button id="process-all">全部处理</button>
+          <button id="download-all" class="secondary" disabled>全部下载</button>
+        </div>
+      </div>
+      <ul id="file-list" class="file-list"></ul>
+      <p id="empty-tip" class="empty-tip">暂无文件，请先添加图片。</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
