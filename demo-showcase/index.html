@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trae 内置工具 & 文件格式演示</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <img src="images/logo.svg" alt="logo" class="logo" />
+    <h1>Trae 内置工具 &amp; 文件格式演示</h1>
+    <p>本页面由 Write 工具生成 · 样式来自 style.css · 交互来自 script.js</p>
+    <button id="demo-btn">点击测试 script.js 交互</button>
+    <p id="demo-output" class="output"></p>
+  </header>
+
+  <main>
+    <section>
+      <h2>AI 生成图片（GenerateImage 工具）</h2>
+      <img src="images/ai-hero.jpg" alt="AI 生成插图" class="ai-image" />
+    </section>
+
+    <section>
+      <h2>代码生成图表（Python + matplotlib）</h2>
+      <img src="images/chart.png" alt="matplotlib 图表" class="chart" />
+    </section>
+
+    <section>
+      <h2>内置工具一览（25 个）</h2>
+      <div class="grid">
+        <div class="card"><h3>文件操作</h3><p>Write · Read · Edit · DeleteFile · LS</p></div>
+        <div class="card"><h3>搜索</h3><p>Glob · Grep</p></div>
+        <div class="card"><h3>终端</h3><p>RunCommand · CheckCommandStatus · StopCommand</p></div>
+        <div class="card"><h3>网络</h3><p>WebSearch · WebFetch</p></div>
+        <div class="card"><h3>AI 生成</h3><p>GenerateImage</p></div>
+        <div class="card"><h3>智能体与扩展</h3><p>Task · Skill · run_mcp</p></div>
+        <div class="card"><h3>用户交互</h3><p>AskUserQuestion · NotifyUser · OpenPreview</p></div>
+        <div class="card"><h3>任务管理</h3><p>TodoWrite · Schedule · goal 系列</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>本次演示的文件格式</h2>
+      <div class="chips">
+        <span class="chip">txt</span><span class="chip">md</span><span class="chip">json</span>
+        <span class="chip">yaml</span><span class="chip">toml</span><span class="chip">ini</span>
+        <span class="chip">csv</span><span class="chip">tsv</span><span class="chip">xml</span>
+        <span class="chip">html</span><span class="chip">css</span><span class="chip">js</span>
+        <span class="chip">ts</span><span class="chip">py</span><span class="chip">sh</span>
+        <span class="chip">sql</span><span class="chip">go</span><span class="chip">rs</span>
+        <span class="chip">java</span><span class="chip">c</span><span class="chip">cpp</span>
+        <span class="chip">svg</span><span class="chip">env</span><span class="chip">Dockerfile</span>
+        <span class="chip">Makefile</span><span class="chip">gitignore</span>
+        <span class="chip highlight">xlsx</span><span class="chip highlight">pptx</span>
+        <span class="chip highlight">docx</span><span class="chip highlight">pdf</span>
+        <span class="chip highlight">png</span><span class="chip highlight">wav</span>
+        <span class="chip highlight">sqlite</span><span class="chip highlight">parquet</span>
+        <span class="chip highlight">zip</span>
+      </div>
+    </section>
+  </main>
+
+  <footer>由 Trae Agent 生成 · 2026-10-08 · 预览由 OpenPreview 工具提供</footer>
+  <script src="script.js"></script>
+</body>
+</html>

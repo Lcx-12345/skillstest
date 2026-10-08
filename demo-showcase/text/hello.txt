@@ -1,0 +1,6 @@
+你好，世界！
+这是一个纯文本文件（.txt）演示，
+由 Trae 内置 Write 工具直接生成。
+
+文件路径：/workspace/demo-showcase/text/hello.txt
+生成日期：2026-10-08
