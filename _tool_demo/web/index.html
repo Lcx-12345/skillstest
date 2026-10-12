@@ -2,11 +2,58 @@
 <html lang="zh">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>演示页面</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Hello</h1>
+  <header class="hero">
+    <h1>我的演示页面</h1>
+    <p>包含列表、卡片和按钮交互的示例。</p>
+    <button id="themeToggle" class="btn btn-outline">切换深色模式</button>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2>功能列表</h2>
+      <ul id="featureList" class="list">
+        <li>列表渲染</li>
+        <li>卡片布局</li>
+        <li>按钮交互</li>
+      </ul>
+      <button id="addItem" class="btn">+ 新增列表项</button>
+    </section>
+
+    <section>
+      <h2>卡片</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>卡片 A</h3>
+          <p>这是第一张卡片，展示一些说明文字。</p>
+        </div>
+        <div class="card">
+          <h3>卡片 B</h3>
+          <p>这是第二张卡片，展示一些说明文字。</p>
+        </div>
+        <div class="card">
+          <h3>卡片 C</h3>
+          <p>这是第三张卡片，展示一些说明文字。</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>计数器</h2>
+      <p>当前计数：<strong id="counter">0</strong></p>
+      <button id="increment" class="btn">点我 +1</button>
+      <button id="reset" class="btn btn-outline">重置</button>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>由 TraeCode 生成 · 仅用于工具演示</p>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
