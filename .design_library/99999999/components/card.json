@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 2,
+  "slug": "card",
+  "name": "Card",
+  "category": "Layout",
+  "sourceKind": "from-scratch",
+  "confidence": "medium",
+  "variantCount": 3,
+  "semanticTypeCandidates": [
+    {
+      "type": "editorial-feature",
+      "evidence": "会员礼遇 — serif headline block with image"
+    },
+    {
+      "type": "quiet-panel",
+      "evidence": "hairline-bordered content panel for 经典系列 intros"
+    },
+    {
+      "type": "promo-strip",
+      "evidence": "限时臻选 — thin gold rule banner"
+    }
+  ],
+  "variantDimensions": [
+    {
+      "axis": "variant",
+      "values": [
+        "editorial",
+        "quiet",
+        "accent-rule"
+      ]
+    },
+    {
+      "axis": "media",
+      "values": [
+        "image",
+        "text-only"
+      ]
+    }
+  ],
+  "representativeVariants": [
+    {
+      "id": "editorial-image",
+      "whySelected": "primary editorial block — image, serif headline, body, quiet link",
+      "traits": {
+        "background": "var(--color-surface)",
+        "border": "1px solid var(--color-border)",
+        "borderRadius": "var(--radius-sm)",
+        "padding": "var(--space-6)"
+      },
+      "childrenDigest": "media slot; eyebrow: 会员礼遇; headline: 臻选会员计划; body: 每季新品优先预览与专属礼遇; link: 查看详情"
+    },
+    {
+      "id": "quiet-text",
+      "whySelected": "text-only panel — hairline border, generous padding, no media",
+      "traits": {
+        "background": "var(--color-surface)",
+        "border": "1px solid var(--color-border)",
+        "borderRadius": "var(--radius-sm)",
+        "padding": "var(--space-6)"
+      },
+      "childrenDigest": "headline: 经典系列; body: 以年代传承的手工艺; link: 查看详情"
+    },
+    {
+      "id": "accent-rule",
+      "whySelected": "banner with thin champagne top rule for 限时臻选",
+      "traits": {
+        "background": "var(--color-surface)",
+        "borderTop": "2px solid var(--color-primary)",
+        "borderRadius": "var(--radius-sm)",
+        "padding": "var(--space-6)"
+      },
+      "childrenDigest": "eyebrow: 限时臻选; headline: 秋季首发; body: 会员优先购"
+    }
+  ],
+  "anatomy": {
+    "slots": [
+      "media",
+      "eyebrow",
+      "headline",
+      "body",
+      "action"
+    ],
+    "description": "serif display headline over quiet sans body; action is an underlined link, never a loud button"
+  },
+  "structurePatterns": "single column; media top optional; hairline border instead of shadow",
+  "usageHints": {
+    "priorityHint": "medium",
+    "guidance": "cards breathe — padding never below space-5; shadows are avoided on cards"
+  },
+  "doNotInvent": [
+    "carousel controls",
+    "badge clusters",
+    "gradient overlays"
+  ],
+  "unknowns": [
+    "exact media aspect tokens",
+    "responsive collapse order"
+  ],
+  "keyInsightSeed": "hairline border plus generous padding — the card breathes"
+}

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ProductCard</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+/* Page scaffold — NOT extracted */
+body { margin: 0; padding: var(--space-3); background: var(--bg); font-family: var(--font-body); color: var(--color-foreground); }
+.row { display: flex; flex-wrap: wrap; align-items: flex-start; gap: var(--space-5); margin-bottom: var(--space-2); }
+.label { flex: 0 0 92px; font-size: var(--font-size-caption); letter-spacing: .12em; text-transform: uppercase; color: var(--color-muted-foreground); white-space: nowrap; }
+.divider { border: 0; border-top: 1px solid var(--rule); margin: var(--space-3) 0; }
+
+/* @component-css-start */
+/* Component definitions — extracted to components.css by deterministic script */
+.pcard { display: flex; flex-direction: column; gap: var(--space-2); width: 240px; flex-shrink: 0; min-width: 0; overflow: hidden; }
+.pcard .media { position: relative; width: 100%; aspect-ratio: 4/5; border-radius: var(--radius-sm); background: var(--color-muted); transition: opacity .25s ease; }
+.pcard .badge { position: absolute; top: var(--space-2); left: var(--space-2); padding: var(--space-1) var(--space-2); font-size: var(--font-size-caption); letter-spacing: .12em; color: var(--foreground-secondary); background: var(--surface); border: 1px solid var(--border); white-space: nowrap; }
+.pcard .name { margin: 0; font-family: var(--font-display); font-size: var(--type-body-md); font-weight: var(--font-weight-h4); line-height: var(--line-height-h3); color: var(--color-foreground); overflow-wrap: break-word; }
+.pcard .price { margin: 0; font-family: var(--font-display); font-size: var(--font-size-lead); color: var(--color-foreground); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.pcard .action { font-size: var(--type-body-sm); color: var(--link); text-decoration: none; border-bottom: 1px solid var(--rule); padding-bottom: var(--space-1); white-space: nowrap; transition: border-color .15s, background .15s; }
+.pcard .action:hover { border-color: var(--accent-hover); }
+.pcard:hover .media { opacity: .92; }
+.pcard:hover .name { text-decoration: underline; }
+/* @component-css-end */
+</style>
+</head>
+<body>
+<div class="row"><span class="label">经典系列</span><article class="pcard" data-evidence-sample="tile-default"><div class="media"></div><h3 class="name">小牛皮手袋 · 经典系列</h3><p class="price">¥ 12,800</p><a class="action" href="#">查看详情</a></article><article class="pcard" data-evidence-sample="tile-badge"><div class="media"><span class="badge">新品登场</span></div><h3 class="name">羊绒围巾</h3><p class="price">¥ 3,200</p><a class="action" href="#">查看详情</a></article></div>
+<hr class="divider">
+<div class="row"><span class="label">臻品推荐</span><article class="pcard" data-evidence-sample="tile-hover"><div class="media"></div><h3 class="name">真皮乐福鞋</h3><p class="price">¥ 6,400</p><a class="action" href="#">加入购物袋</a></article></div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 2,
+  "slug": "cart",
+  "name": "Cart",
+  "category": "Commerce",
+  "sourceKind": "from-scratch",
+  "confidence": "medium",
+  "variantCount": 3,
+  "semanticTypeCandidates": [
+    {
+      "type": "cart-drawer",
+      "evidence": "slide-in panel with line items and 结算"
+    },
+    {
+      "type": "order-summary",
+      "evidence": "static block for checkout page"
+    },
+    {
+      "type": "mini-cart",
+      "evidence": "compact popover attached to bag icon"
+    }
+  ],
+  "variantDimensions": [
+    {
+      "axis": "variant",
+      "values": [
+        "drawer",
+        "summary"
+      ]
+    },
+    {
+      "axis": "state",
+      "values": [
+        "default",
+        "empty"
+      ]
+    }
+  ],
+  "representativeVariants": [
+    {
+      "id": "drawer-default",
+      "whySelected": "primary shopping flow — item list plus gold checkout",
+      "traits": {
+        "width": "380px panel",
+        "background": "var(--color-surface)",
+        "borderLeft": "1px solid var(--color-border)",
+        "padding": "var(--space-6)"
+      },
+      "childrenDigest": "header: 购物袋 (serif); line items: 小牛皮手袋 ¥ 12,800 ×1 / 羊绒围巾 ¥ 3,200 ×2; subtotal: 小计 ¥ 19,200; primary button: 结算; link: 继续选购"
+    },
+    {
+      "id": "summary-block",
+      "whySelected": "checkout summary with hairline dividers",
+      "traits": {
+        "border": "1px solid var(--color-border)",
+        "borderRadius": "var(--radius-sm)",
+        "padding": "var(--space-6)"
+      },
+      "childrenDigest": "headline: 订单摘要; rows: 商品 ¥ 19,200 / 运费 ¥ 0; total: 合计 ¥ 19,200; button: 结算"
+    },
+    {
+      "id": "drawer-empty",
+      "whySelected": "empty state stays serene",
+      "traits": {
+        "padding": "var(--space-8)",
+        "textAlign": "center"
+      },
+      "childrenDigest": "headline: 购物袋空空如也; link: 去逛逛臻品推荐"
+    }
+  ],
+  "anatomy": {
+    "slots": [
+      "header",
+      "line-items",
+      "subtotal",
+      "action"
+    ],
+    "description": "line items separated by hairline dividers; subtotal in tabular serif; gold 结算 primary closes the flow"
+  },
+  "structurePatterns": "vertical list; 64px item thumbs; footer pinned with subtotal and CTA",
+  "usageHints": {
+    "priorityHint": "high",
+    "guidance": "no urgency colors, no badges in cart — keep it calm"
+  },
+  "doNotInvent": [
+    "promo code field",
+    "gift wrap options",
+    "free-shipping progress bar"
+  ],
+  "unknowns": [
+    "quantity stepper exact styling",
+    "drawer animation easing"
+  ],
+  "keyInsightSeed": "hairline dividers only; subtotal in tabular serif; gold checkout at the end"
+}

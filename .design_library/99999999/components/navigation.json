@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 2,
+  "slug": "navigation",
+  "name": "Navigation",
+  "category": "Navigation",
+  "sourceKind": "from-scratch",
+  "confidence": "medium",
+  "variantCount": 3,
+  "semanticTypeCandidates": [
+    {
+      "type": "header-bar",
+      "evidence": "wordmark + menu + search/bag actions"
+    },
+    {
+      "type": "announcement-bar",
+      "evidence": "限时臻选 top strip"
+    },
+    {
+      "type": "overlay-nav",
+      "evidence": "transparent nav over hero imagery"
+    }
+  ],
+  "variantDimensions": [
+    {
+      "axis": "variant",
+      "values": [
+        "standard",
+        "transparent"
+      ]
+    },
+    {
+      "axis": "surface",
+      "values": [
+        "ivory",
+        "over-hero"
+      ]
+    }
+  ],
+  "representativeVariants": [
+    {
+      "id": "header-standard",
+      "whySelected": "the canonical bar — hairline bottom border, serif wordmark",
+      "traits": {
+        "height": "64px bar",
+        "background": "var(--color-surface)",
+        "borderBottom": "1px solid var(--color-border)",
+        "padding": "0 var(--space-8)"
+      },
+      "childrenDigest": "wordmark: 99999999 (serif); menu: 经典系列 / 新品登场 / 臻品推荐; actions: 搜索 · 购物袋 · 会员礼遇"
+    },
+    {
+      "id": "announcement",
+      "whySelected": "slim top strip for campaigns",
+      "traits": {
+        "height": "36px",
+        "background": "var(--color-surface-muted)",
+        "fontSize": "var(--type-caption-size)",
+        "letterSpacing": "0.12em",
+        "textAlign": "center"
+      },
+      "childrenDigest": "text: 限时臻选 · 会员优先购"
+    },
+    {
+      "id": "header-transparent",
+      "whySelected": "overlay nav on editorial hero",
+      "traits": {
+        "background": "transparent",
+        "color": "var(--color-text)",
+        "borderBottom": "none"
+      },
+      "childrenDigest": "wordmark: 99999999; menu: 经典系列 / 臻品推荐; action: 购物袋"
+    }
+  ],
+  "anatomy": {
+    "slots": [
+      "wordmark",
+      "menu",
+      "actions"
+    ],
+    "description": "centered serif wordmark; menu items in letter-spaced captions; actions written as quiet text links"
+  },
+  "structurePatterns": "3-zone row: menu left, wordmark center, actions right",
+  "usageHints": {
+    "priorityHint": "high",
+    "guidance": "menu items are letter-spaced captions; no underlines until hover"
+  },
+  "doNotInvent": [
+    "mega-menu panels",
+    "hamburger drawer",
+    "sticky shrink animation"
+  ],
+  "unknowns": [
+    "scrolled-state background switch",
+    "mobile breakpoint layout"
+  ],
+  "keyInsightSeed": "centered serif wordmark over letter-spaced caption menu"
+}

@@ -1,0 +1,64 @@
+{
+  "components": [
+    {
+      "slug": "button",
+      "name": "Button",
+      "category": "Actions",
+      "sourceKind": "from-scratch",
+      "confidence": "medium",
+      "variantCount": 4,
+      "priorityHint": "high",
+      "keyInsightSeed": "champagne-gold CTA is the single saturated element on the ivory canvas"
+    },
+    {
+      "slug": "card",
+      "name": "Card",
+      "category": "Layout",
+      "sourceKind": "from-scratch",
+      "confidence": "medium",
+      "variantCount": 3,
+      "priorityHint": "medium",
+      "keyInsightSeed": "hairline border plus generous padding — the card breathes"
+    },
+    {
+      "slug": "product-card",
+      "name": "ProductCard",
+      "category": "Data Display",
+      "sourceKind": "from-scratch",
+      "confidence": "medium",
+      "variantCount": 3,
+      "priorityHint": "high",
+      "keyInsightSeed": "price in tabular serif; hover whispers — opacity, never bounce"
+    },
+    {
+      "slug": "cart",
+      "name": "Cart",
+      "category": "Commerce",
+      "sourceKind": "from-scratch",
+      "confidence": "medium",
+      "variantCount": 3,
+      "priorityHint": "high",
+      "keyInsightSeed": "hairline dividers only; subtotal in tabular serif; gold checkout at the end"
+    },
+    {
+      "slug": "navigation",
+      "name": "Navigation",
+      "category": "Navigation",
+      "sourceKind": "from-scratch",
+      "confidence": "medium",
+      "variantCount": 3,
+      "priorityHint": "high",
+      "keyInsightSeed": "centered serif wordmark over letter-spaced caption menu"
+    },
+    {
+      "slug": "input",
+      "name": "Input",
+      "category": "Forms",
+      "sourceKind": "from-scratch",
+      "confidence": "medium",
+      "variantCount": 3,
+      "priorityHint": "medium",
+      "keyInsightSeed": "underline fields keep the canvas clean; focus turns the hairline gold"
+    }
+  ]
+}

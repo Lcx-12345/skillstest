@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 2,
+  "slug": "input",
+  "name": "Input",
+  "category": "Forms",
+  "sourceKind": "from-scratch",
+  "confidence": "medium",
+  "variantCount": 3,
+  "semanticTypeCandidates": [
+    {
+      "type": "underline-field",
+      "evidence": "newsletter email — bottom hairline only"
+    },
+    {
+      "type": "boxed-field",
+      "evidence": "search and checkout forms with hairline box"
+    },
+    {
+      "type": "quiet-label-field",
+      "evidence": "caption label above the field"
+    }
+  ],
+  "variantDimensions": [
+    {
+      "axis": "variant",
+      "values": [
+        "underline",
+        "boxed"
+      ]
+    },
+    {
+      "axis": "state",
+      "values": [
+        "default",
+        "focus",
+        "error"
+      ]
+    }
+  ],
+  "representativeVariants": [
+    {
+      "id": "underline-default",
+      "whySelected": "signature minimal field — single bottom hairline",
+      "traits": {
+        "background": "transparent",
+        "border": "none",
+        "borderBottom": "1px solid var(--color-border)",
+        "padding": "var(--space-3) 0",
+        "fontSize": "var(--type-body-size)",
+        "color": "var(--color-text)"
+      },
+      "childrenDigest": "label: 电子邮件地址; placeholder: name@example.com; trailing text link: 订阅"
+    },
+    {
+      "id": "boxed-default",
+      "whySelected": "search field with hairline box",
+      "traits": {
+        "height": "var(--size-input-md)",
+        "border": "1px solid var(--color-border)",
+        "borderRadius": "var(--radius-sm)",
+        "background": "var(--color-surface)",
+        "padding": "0 var(--space-4)"
+      },
+      "childrenDigest": "placeholder: 搜索臻品"
+    },
+    {
+      "id": "underline-error",
+      "whySelected": "error stays quiet — thin error hairline plus caption",
+      "traits": {
+        "borderBottom": "1px solid var(--color-error)",
+        "fontSize": "var(--type-body-size)"
+      },
+      "childrenDigest": "label: 电子邮件地址; helper caption: 请输入有效的邮箱地址"
+    }
+  ],
+  "anatomy": {
+    "slots": [
+      "label",
+      "field",
+      "placeholder",
+      "helper"
+    ],
+    "description": "optional caption-size label above; no filled backgrounds; focus turns the hairline champagne gold"
+  },
+  "structurePatterns": "stacked label+field; helper caption below in muted text",
+  "usageHints": {
+    "priorityHint": "medium",
+    "guidance": "focus uses a gold hairline, never a glow ring; error keeps the same weight"
+  },
+  "doNotInvent": [
+    "icon prefixes",
+    "floating labels",
+    "filled gray backgrounds"
+  ],
+  "unknowns": [
+    "exact focus transition timing",
+    "disabled state styling"
+  ],
+  "keyInsightSeed": "underline fields keep the canvas clean; focus turns the hairline gold"
+}

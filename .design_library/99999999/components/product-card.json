@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 2,
+  "slug": "product-card",
+  "name": "ProductCard",
+  "category": "Data Display",
+  "sourceKind": "from-scratch",
+  "confidence": "medium",
+  "variantCount": 3,
+  "semanticTypeCandidates": [
+    {
+      "type": "product-tile",
+      "evidence": "grid tile — 4:5 media, name, price"
+    },
+    {
+      "type": "badge-tile",
+      "evidence": "新品登场 hairline badge corner tag"
+    },
+    {
+      "type": "list-row",
+      "evidence": "compact horizontal row for search results"
+    }
+  ],
+  "variantDimensions": [
+    {
+      "axis": "layout",
+      "values": [
+        "vertical"
+      ]
+    },
+    {
+      "axis": "badge",
+      "values": [
+        "none",
+        "new-arrival"
+      ]
+    },
+    {
+      "axis": "state",
+      "values": [
+        "default",
+        "hover"
+      ]
+    }
+  ],
+  "representativeVariants": [
+    {
+      "id": "tile-default",
+      "whySelected": "core grid tile of the storefront",
+      "traits": {
+        "media": "4:5 ratio on var(--color-surface-muted)",
+        "borderRadius": "var(--radius-sm)",
+        "nameColor": "var(--color-text)",
+        "nameFont": "serif display at var(--type-body-size)",
+        "priceFont": "tabular serif at var(--color-text)"
+      },
+      "childrenDigest": "media; name: 小牛皮手袋 · 经典系列; price: ¥ 12,800; link: 查看详情"
+    },
+    {
+      "id": "tile-badge",
+      "whySelected": "new-arrival hairline badge variant",
+      "traits": {
+        "badge": "1px hairline chip on var(--color-surface)",
+        "fontSize": "var(--type-caption-size)",
+        "letterSpacing": "0.12em"
+      },
+      "childrenDigest": "badge: 新品登场; media; name: 羊绒围巾; price: ¥ 3,200"
+    },
+    {
+      "id": "tile-hover",
+      "whySelected": "hover state whispers — media dims slightly, name underlines",
+      "traits": {
+        "mediaOpacity": "0.92 on hover",
+        "nameDecoration": "underline on hover",
+        "transition": "opacity 0.25s ease"
+      },
+      "childrenDigest": "media; name: 真皮乐福鞋; price: ¥ 6,400; hint text: 加入购物袋"
+    }
+  ],
+  "anatomy": {
+    "slots": [
+      "media",
+      "badge",
+      "name",
+      "price",
+      "quick-action"
+    ],
+    "description": "4:5 media on muted ground; serif product name; tabular-serif price aligned left"
+  },
+  "structurePatterns": "vertical stack; 24px gutters between tiles; no shadows",
+  "usageHints": {
+    "priorityHint": "high",
+    "guidance": "price always in tabular numerals; never strike-through original price in default state"
+  },
+  "doNotInvent": [
+    "rating stars",
+    "color swatch row",
+    "discount percentage burst"
+  ],
+  "unknowns": [
+    "wishlist icon behavior",
+    "quick-add overlay pattern"
+  ],
+  "keyInsightSeed": "price in tabular serif; hover whispers — opacity, never bounce"
+}
