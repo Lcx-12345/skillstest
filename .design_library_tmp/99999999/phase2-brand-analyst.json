@@ -1,0 +1,11 @@
+{
+  "brandName": "99999999",
+  "productType": "E-commerce / Light-luxury Brand",
+  "confidence": "medium",
+  "personality": ["light-luxury", "minimal", "refined", "understated", "serene"],
+  "language": "zh",
+  "visualTone": "ivory/porcelain canvas, champagne-gold accents used sparingly, near-black ink text, generous negative space, hairline borders, whisper-soft shadows - luxury through proportion and whitespace, never ornament",
+  "kitType": "ecommerce",
+  "colorNamingPrefix": "lux",
+  "uiCopySamples": ["新品登场", "经典系列", "加入购物袋", "会员礼遇", "查看详情", "臻品推荐", "限时臻选", "结算"]
+}
