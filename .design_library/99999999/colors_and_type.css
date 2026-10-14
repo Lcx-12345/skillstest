@@ -1,0 +1,264 @@
+/* Brand: 99999999 — E-commerce / Light-luxury (轻奢极简) */
+/* @group-priority: primary, success, warning, error, info */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap');
+
+:root {
+  /* primary */
+  --lux-gold-50: #FBF7EE; /* AI-generated */
+  --lux-gold-100: #F5EDDD; /* AI-generated */
+  --lux-gold-200: #EADDC2; /* AI-generated */
+  --lux-gold-300: #DEC8A0; /* AI-generated */
+  --lux-gold-400: #CDB07C; /* AI-generated */
+  --lux-gold-500: #BC9A5C; /* AI-generated */
+  --lux-gold-600: #A98443; /* AI-generated */ /* @primary */
+  --lux-gold-700: #8C6C36; /* AI-generated */
+  --lux-gold-800: #6E542C; /* AI-generated */
+  --lux-gold-900: #4E3B20; /* AI-generated */
+  --primary: var(--lux-gold-600);
+  --primary-foreground: #FFFDF8;
+
+  /* neutral */
+  --lux-warm-50: #FAF8F4; /* AI-generated */
+  --lux-warm-100: #F3F0E9; /* AI-generated */
+  --lux-warm-200: #E6E1D6; /* AI-generated */
+  --lux-warm-300: #D4CDBE; /* AI-generated */
+  --lux-warm-400: #B5AC9A; /* AI-generated */
+  --lux-warm-500: #948B79; /* AI-generated */ /* @primary */
+  --lux-warm-600: #746D5E; /* AI-generated */
+  --lux-warm-700: #575146; /* AI-generated */
+  --lux-warm-800: #3B362F; /* AI-generated */
+  --lux-warm-900: #26221D; /* AI-generated */
+
+  /* success */
+  --lux-success-50: #F1F7F0; /* AI-generated */
+  --lux-success-100: #DFEDDC; /* AI-generated */
+  --lux-success-200: #C2DDBD; /* AI-generated */
+  --lux-success-300: #9CC896; /* AI-generated */
+  --lux-success-400: #71AC6B; /* AI-generated */
+  --lux-success-500: #4F8E4B; /* AI-generated */
+  --lux-success-600: #3C7239; /* AI-generated */ /* @primary */
+  --lux-success-700: #305C2E; /* AI-generated */
+  --lux-success-800: #264825; /* AI-generated */
+  --lux-success-900: #1B331B; /* AI-generated */
+
+  /* warning */
+  --lux-warning-50: #FBF6EB; /* AI-generated */
+  --lux-warning-100: #F5EAD0; /* AI-generated */
+  --lux-warning-200: #EBD5A5; /* AI-generated */
+  --lux-warning-300: #DEBC74; /* AI-generated */
+  --lux-warning-400: #D0A24C; /* AI-generated */
+  --lux-warning-500: #BE8A33; /* AI-generated */
+  --lux-warning-600: #A37125; /* AI-generated */ /* @primary */
+  --lux-warning-700: #82591D; /* AI-generated */
+  --lux-warning-800: #64451C; /* AI-generated */
+  --lux-warning-900: #463016; /* AI-generated */
+
+  /* error */
+  --lux-error-50: #FBF1EF; /* AI-generated */
+  --lux-error-100: #F6DDD9; /* AI-generated */
+  --lux-error-200: #EEBDB5; /* AI-generated */
+  --lux-error-300: #E2978C; /* AI-generated */
+  --lux-error-400: #D26D5E; /* AI-generated */
+  --lux-error-500: #BF4E3E; /* AI-generated */
+  --lux-error-600: #A33C2E; /* AI-generated */ /* @primary */
+  --lux-error-700: #853025; /* AI-generated */
+  --lux-error-800: #66261E; /* AI-generated */
+  --lux-error-900: #471B16; /* AI-generated */
+
+  /* info */
+  --lux-info-50: #EFF4F8; /* AI-generated */
+  --lux-info-100: #DCE7F0; /* AI-generated */
+  --lux-info-200: #BCD0E1; /* AI-generated */
+  --lux-info-300: #93B2CC; /* AI-generated */
+  --lux-info-400: #688FAD; /* AI-generated */
+  --lux-info-500: #4A7291; /* AI-generated */
+  --lux-info-600: #3A5B75; /* AI-generated */ /* @primary */
+  --lux-info-700: #2F495D; /* AI-generated */
+  --lux-info-800: #253948; /* AI-generated */
+  --lux-info-900: #1A2832; /* AI-generated */
+
+  /* text */
+  --foreground: #26221D; /* AI-generated */
+  --muted-foreground: #746D5E; /* AI-generated */
+  --foreground-secondary: #575146; /* AI-generated */
+  --fg: var(--foreground);
+  --muted: var(--muted-foreground);
+  --link: var(--lux-gold-700);
+
+  /* surface */
+  --background: #FAF8F4; /* AI-generated */
+  --surface: #FFFDF9; /* AI-generated */
+  --card: #FFFDF9; /* AI-generated */
+  --popover: #FFFFFF; /* AI-generated */
+  --surface-dim: #F3F0E9; /* AI-generated */
+  --bg: var(--background);
+  --rule: var(--lux-warm-200);
+  --border: var(--lux-warm-200);
+
+  /* accent */
+  --accent: var(--lux-gold-500); /* AI-generated */
+  --accent-hover: var(--lux-gold-600); /* AI-generated */
+  --accent-foreground: #FFFDF8; /* AI-generated */
+  --ring: var(--lux-gold-500); /* AI-generated */
+
+  /* Typography */
+  --font-display: 'Cormorant Garamond', serif;
+  --font-heading: 'Cormorant Garamond', serif;
+  --font-body: 'Jost', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-size-display: 56px;
+  --font-size-h1: 40px;
+  --font-size-h2: 32px;
+  --font-size-h3: 24px;
+  --font-size-h4: 20px;
+  --font-size-body: 16px;
+  --font-size-lead: 18px;
+  --font-size-caption: 12px;
+  --font-size-eyebrow: 11px;
+  --font-size-mono: 14px;
+  --font-weight-display: 600;
+  --font-weight-h1: 600;
+  --font-weight-h2: 500;
+  --font-weight-h3: 500;
+  --font-weight-h4: 500;
+  --font-weight-body: 400;
+  --font-weight-lead: 300;
+  --font-weight-caption: 400;
+  --font-weight-eyebrow: 500;
+  --font-weight-mono: 400;
+  --line-height-display: 1.1;
+  --line-height-h1: 1.2;
+  --line-height-h2: 1.25;
+  --line-height-h3: 1.3;
+  --line-height-h4: 1.4;
+  --line-height-body: 1.6;
+  --line-height-lead: 1.7;
+  --line-height-caption: 1.5;
+  --line-height-eyebrow: 1.4;
+  --line-height-mono: 1.6;
+
+  /* Spacing (4px-based) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+
+  /* Sizing */
+  --size-icon-sm: 16px;
+  --size-icon-md: 20px;
+  --size-icon-lg: 24px;
+  --size-button-sm: 36px;
+  --size-button-md: 44px;
+  --size-button-lg: 52px;
+  --size-input-height: 48px;
+
+  /* Radius */
+  --radius-none: 0px;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-1: 0 1px 2px rgba(38,34,29,.04); /* Card hairline */
+  --shadow-2: 0 2px 6px rgba(38,34,29,.05); /* Card hover */
+  --shadow-3: 0 6px 16px rgba(38,34,29,.06); /* Dropdown */
+  --shadow-4: 0 12px 32px rgba(38,34,29,.08); /* Modal */
+  --shadow-5: 0 20px 48px rgba(38,34,29,.10); /* Overlay */
+
+  /* Semantic alias layer */
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--accent-hover);
+  --color-on-primary: var(--primary-foreground);
+  --color-primary-container: var(--lux-gold-50);
+  --color-on-primary-container: var(--lux-gold-900);
+  --color-accent: var(--accent);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-card: var(--card);
+  --color-muted: var(--surface-dim);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-outline: var(--rule);
+  --color-success: var(--lux-success-600);
+  --color-warning: var(--lux-warning-600);
+  --color-error: var(--lux-error-600);
+  --color-info: var(--lux-info-600);
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 4px;
+  --radius-full: 9999px;
+  --type-display-sm: 40px;
+  --type-heading-sm: 24px;
+  --type-body-md: 16px;
+  --type-body-sm: 14px;
+  --font-family-base: var(--font-body);
+}
+
+.dark {
+  /* primary */
+  --lux-gold-50: #2C251A; /* AI-generated */
+  --lux-gold-100: #3A3021; /* AI-generated */
+  --lux-gold-200: #4D3F2A; /* AI-generated */
+  --lux-gold-300: #6A5535; /* AI-generated */
+  --lux-gold-400: #8C7248; /* AI-generated */
+  --lux-gold-500: #AB8E5D; /* AI-generated */
+  --lux-gold-600: #C4A97A; /* AI-generated */ /* @primary */
+  --lux-gold-700: #D5BE96; /* AI-generated */
+  --lux-gold-800: #E4D2B2; /* AI-generated */
+  --lux-gold-900: #F0E4CC; /* AI-generated */
+  --primary: var(--lux-gold-600);
+  --primary-foreground: #26221D;
+
+  /* neutral */
+  --lux-warm-50: #1C1915; /* AI-generated */
+  --lux-warm-100: #26221D; /* AI-generated */
+  --lux-warm-200: #38332B; /* AI-generated */
+  --lux-warm-300: #4C463C; /* AI-generated */
+  --lux-warm-400: #6B6355; /* AI-generated */
+  --lux-warm-500: #8C8371; /* AI-generated */ /* @primary */
+  --lux-warm-600: #ADA492; /* AI-generated */
+  --lux-warm-700: #C7BFAF; /* AI-generated */
+  --lux-warm-800: #DFD9CC; /* AI-generated */
+  --lux-warm-900: #F1EDE3; /* AI-generated */
+
+  /* text */
+  --foreground: #F1EDE3;
+  --muted-foreground: #ADA492;
+  --foreground-secondary: #C7BFAF;
+  --fg: var(--foreground);
+  --muted: var(--muted-foreground);
+  --link: var(--lux-gold-700);
+
+  /* surface */
+  --background: #1C1915;
+  --surface: #26221D;
+  --card: #26221D;
+  --popover: #2C2820;
+  --surface-dim: #14110E;
+  --bg: var(--background);
+  --rule: var(--lux-warm-200);
+  --border: var(--lux-warm-200);
+
+  /* accent */
+  --accent: var(--lux-gold-500);
+  --accent-hover: var(--lux-gold-400);
+  --ring: var(--lux-gold-500);
+}
+
+/* Typography classes */
+.lux-display { font-family: var(--font-display); font-size: 3.5rem; font-weight: var(--font-weight-display); line-height: var(--line-height-display); letter-spacing: -0.01em; }
+.lux-h1 { font-family: var(--font-heading); font-size: 2.5rem; font-weight: var(--font-weight-h1); line-height: var(--line-height-h1); }
+.lux-h2 { font-family: var(--font-heading); font-size: 2rem; font-weight: var(--font-weight-h2); line-height: var(--line-height-h2); }
+.lux-h3 { font-family: var(--font-heading); font-size: 1.5rem; font-weight: var(--font-weight-h3); line-height: var(--line-height-h3); }
+.lux-h4 { font-family: var(--font-heading); font-size: 1.25rem; font-weight: var(--font-weight-h4); line-height: var(--line-height-h4); }
+.lux-body { font-family: var(--font-body); font-size: 1rem; font-weight: var(--font-weight-body); line-height: var(--line-height-body); }
+.lux-lead { font-family: var(--font-body); font-size: 1.125rem; font-weight: var(--font-weight-lead); line-height: var(--line-height-lead); }
+.lux-caption { font-family: var(--font-body); font-size: 0.75rem; font-weight: var(--font-weight-caption); line-height: var(--line-height-caption); }
+.lux-eyebrow { font-family: var(--font-body); font-size: 0.6875rem; font-weight: var(--font-weight-eyebrow); line-height: var(--line-height-eyebrow); letter-spacing: 0.14em; text-transform: uppercase; }
+.lux-mono { font-family: var(--font-mono); font-size: 0.875rem; font-weight: var(--font-weight-mono); line-height: var(--line-height-mono); }
+.lux-price { font-family: var(--font-display); font-size: 1.5rem; font-weight: var(--font-weight-display); line-height: var(--line-height-display); font-variant-numeric: tabular-nums; }
