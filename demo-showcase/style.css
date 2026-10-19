@@ -41,7 +41,7 @@ button {
   padding: 10px 24px;
   border: none;
   border-radius: 8px;
-  background: var(--accent);
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
   color: #fff;
   font-size: 15px;
   cursor: pointer;
