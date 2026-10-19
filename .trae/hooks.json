@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$TRAE_PROJECT_DIR/.trae/hooks/pretooluse_logger.sh\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}
