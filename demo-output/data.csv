@@ -1,0 +1,16 @@
+格式,类别,生成工具,演示文件
+txt,文本,Write,hello.txt
+md,文本,Write,notes.md
+csv,文本,Write,data.csv
+json,数据,Write,config.json
+yaml,数据,Write,config.yaml
+xml,数据,Write,config.xml
+svg,矢量图,Write,icon.svg
+html,网页,Write,demo.html
+py,代码,Write,demo_code.py
+jpg,图片,GenerateImage,ai_image.jpg
+docx,Office,Skill:office-plugin:docx,report.docx
+xlsx,Office,Skill:office-plugin:xlsx,data.xlsx
+pptx,Office,Skill:office-plugin:pptx,presentation.pptx
+pdf,Office,Skill:office-plugin:pdf,summary.pdf
+zip,归档,RunCommand,demo-output.zip

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trae 全工具演示</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 60%, #312e81 100%);
+    color: #e2e8f0; min-height: 100vh; padding: 48px 24px;
+  }
+  .wrap { max-width: 960px; margin: 0 auto; }
+  header { text-align: center; margin-bottom: 40px; }
+  h1 { font-size: 34px; background: linear-gradient(90deg, #22d3ee, #a78bfa, #f472b6);
+       -webkit-background-clip: text; background-clip: text; color: transparent; }
+  header p { color: #94a3b8; margin-top: 10px; }
+  .hero { width: 100%; border-radius: 16px; margin: 8px 0 36px;
+          box-shadow: 0 20px 60px rgba(79, 70, 229, .35); }
+  h2 { font-size: 20px; margin: 32px 0 16px; color: #c7d2fe; border-left: 4px solid #6366f1; padding-left: 10px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+  .card { background: rgba(30, 41, 59, .6); border: 1px solid rgba(148, 163, 184, .15);
+          border-radius: 12px; padding: 14px 16px; font-size: 14px; }
+  .card b { color: #22d3ee; display: block; margin-bottom: 4px; font-size: 15px; }
+  .card small { color: #94a3b8; }
+  table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 14px; }
+  th, td { padding: 8px 12px; text-align: left; border-bottom: 1px solid rgba(148,163,184,.15); }
+  th { color: #a78bfa; }
+  button { margin-top: 24px; padding: 12px 28px; font-size: 15px; border: none; border-radius: 999px;
+           background: linear-gradient(90deg, #6366f1, #ec4899); color: #fff; cursor: pointer; }
+  button:active { transform: scale(.97); }
+  #result { margin-top: 14px; color: #22d3ee; min-height: 22px; }
+  footer { text-align: center; color: #64748b; font-size: 12px; margin-top: 48px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Trae 内置工具 × 文件格式 全景演示</h1>
+    <p>26 个内置工具 · 15 种文件格式 · 一次全部演示 · 2026-10-19</p>
+  </header>
+
+  <img class="hero" src="ai_image.jpg" alt="AI 生成的横幅插图（GenerateImage 工具）">
+
+  <h2>生成的文本类格式（Write 工具）</h2>
+  <div class="grid">
+    <div class="card"><b>hello.txt</b><small>纯文本</small></div>
+    <div class="card"><b>notes.md</b><small>Markdown 文档</small></div>
+    <div class="card"><b>data.csv</b><small>表格数据</small></div>
+    <div class="card"><b>config.json</b><small>JSON 配置</small></div>
+    <div class="card"><b>config.yaml</b><small>YAML 配置</small></div>
+    <div class="card"><b>config.xml</b><small>XML 配置</small></div>
+    <div class="card"><b>icon.svg</b><small>矢量图形</small></div>
+    <div class="card"><b>demo_code.py</b><small>Python 代码（已运行）</small></div>
+  </div>
+
+  <h2>Office 文档（office-plugin 技能）</h2>
+  <table>
+    <tr><th>文件</th><th>格式</th><th>工具</th></tr>
+    <tr><td>report.docx</td><td>Word 文档</td><td>Skill + python-docx</td></tr>
+    <tr><td>data.xlsx</td><td>Excel 表格</td><td>Skill + openpyxl</td></tr>
+    <tr><td>presentation.pptx</td><td>PPT 幻灯片</td><td>Skill + python-pptx</td></tr>
+    <tr><td>summary.pdf</td><td>PDF 文档</td><td>Skill + reportlab</td></tr>
+  </table>
+
+  <h2>JS 交互演示（内嵌脚本）</h2>
+  <button onclick="demo()">点我测试 JS 交互</button>
+  <div id="result">等待点击…</div>
+
+  <footer>由 Trae 生成 · demo.html 为自包含页面 · 本页由 python http.server 提供服务</footer>
+</div>
+<script>
+  let n = 0;
+  function demo() {
+    n++;
+    const t = new Date().toLocaleTimeString("zh-CN");
+    document.getElementById("result").textContent =
+      `第 ${n} 次点击 @ ${t} —— 内嵌 JavaScript 运行正常`;
+    document.body.style.background = `linear-gradient(135deg, hsl(${(n * 40) % 360} 60% 12%), #312e81)`;
+  }
+</script>
+</body>
+</html>

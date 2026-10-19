@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<demo title="Trae 内置工具与文件格式全量演示" date="2026-10-19">
+  <output_dir>/workspace/demo-output</output_dir>
+  <tool_count>26</tool_count>
+  <formats>
+    <format>txt</format><format>md</format><format>csv</format><format>json</format>
+    <format>yaml</format><format>xml</format><format>svg</format><format>html</format>
+    <format>py</format><format>jpg</format><format>docx</format><format>xlsx</format>
+    <format>pptx</format><format>pdf</format><format>zip</format>
+  </formats>
+  <tools group="file">Read, Write, Edit, DeleteFile, Glob, Grep, LS, SearchCodebase</tools>
+  <tools group="terminal">RunCommand, CheckCommandStatus, StopCommand</tools>
+  <tools group="web">WebSearch, WebFetch</tools>
+  <tools group="media">GenerateImage</tools>
+  <tools group="agent">Task</tools>
+  <tools group="interaction">TodoWrite, AskUserQuestion, NotifyUser, OpenPreview, browser_waiting_for_user_interaction</tools>
+  <tools group="goal">get_goal, create_goal, update_goal</tools>
+  <tools group="schedule">Schedule</tools>
+  <tools group="extension">Skill, run_mcp</tools>
+</demo>
