@@ -23,7 +23,7 @@ body {
   background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(34, 211, 238, 0.1));
 }
 
-.logo { width: 72px; height: 72px; }
+.logo { display: block; width: 72px; height: 72px; margin-left: auto; margin-right: 0; }
 
 .hero h1 {
   font-size: 28px;
