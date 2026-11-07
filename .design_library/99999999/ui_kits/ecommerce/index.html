@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>99999999 · 轻奢极简 UI Kit</title>
+<link rel="stylesheet" href="../../colors_and_type.css">
+<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<style>
+/* 布局与组件样式 — 颜色/字体/间距/圆角/阴影一律取自 colors_and_type.css 令牌 */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--color-background);color:var(--color-foreground);font-family:var(--font-family-base);font-size:var(--font-size-body);line-height:var(--line-height-body);-webkit-font-smoothing:antialiased}
+.container{max-width:1160px;margin:0 auto;padding:0 var(--space-6)}
+.announce{display:flex;align-items:center;justify-content:center;height:36px;background:var(--color-muted);font-size:var(--font-size-caption);letter-spacing:.14em;text-indent:.14em;color:var(--color-foreground)}
+.site-header{position:sticky;top:0;z-index:20;background:var(--color-surface);border-bottom:1px solid var(--color-border)}
+.header-grid{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:64px}
+.menu{display:flex;gap:var(--space-6);justify-self:start}
+.actions{display:flex;gap:var(--space-5);justify-self:end;align-items:baseline}
+.nav-link{font-size:var(--font-size-caption);letter-spacing:.12em;color:var(--color-foreground);text-decoration:none;white-space:nowrap}
+.menu .nav-link:hover,.actions .nav-link:hover{text-decoration:underline;text-underline-offset:6px}
+.bag-btn{border:0;background:none;padding:0;cursor:pointer;font-family:var(--font-family-base);font-variant-numeric:tabular-nums}
+.wordmark{font-family:var(--font-display);font-size:var(--font-size-h4);font-weight:var(--font-weight-display);letter-spacing:.08em;color:var(--color-foreground);text-decoration:none;white-space:nowrap}
+.hero-block{background:var(--color-muted);border-radius:var(--radius-sm);padding:var(--space-8);margin-top:var(--space-8)}
+.eyebrow{font-size:var(--font-size-eyebrow);font-weight:var(--font-weight-eyebrow);letter-spacing:.14em;text-transform:uppercase;color:var(--color-muted-foreground);margin:0 0 var(--space-3)}
+.hero-title{font-family:var(--font-display);font-size:clamp(var(--font-size-h2),5vw,var(--font-size-display));font-weight:var(--font-weight-display);line-height:var(--line-height-display);letter-spacing:-.01em;color:var(--color-foreground);margin:0 0 var(--space-5);max-width:14em}
+.hero-body{font-size:var(--font-size-lead);font-weight:var(--font-weight-lead);line-height:var(--line-height-lead);color:var(--color-muted-foreground);max-width:34em;margin:0 0 var(--space-6)}
+.btn{display:inline-flex;align-items:center;justify-content:center;height:var(--size-button-md);padding:0 var(--space-8);border:1px solid transparent;border-radius:var(--radius-sm);background:transparent;font-family:var(--font-family-base);font-size:var(--font-size-body);font-weight:var(--font-weight-body);letter-spacing:.12em;text-indent:.12em;white-space:nowrap;cursor:pointer;transition:background .15s ease,border-color .15s ease,filter .15s ease}
+.btn-primary{background:var(--color-primary);color:var(--color-on-primary)}
+.btn-primary:hover{filter:brightness(.92)}
+.btn-outline{border-color:var(--color-border);color:var(--color-foreground)}
+.btn-outline:hover{background:var(--color-muted)}
+.btn-sm{height:var(--size-button-sm);padding:0 var(--space-5);font-size:var(--type-body-sm);letter-spacing:.1em;text-indent:.1em}
+.btn-block{display:flex;width:100%}
+.btn-checkout{display:flex;width:100%;height:var(--size-button-lg);letter-spacing:.24em;text-indent:.24em}
+.tlink{color:var(--link);font-size:var(--font-size-body);font-family:var(--font-family-base);background:none;border:0;border-bottom:1px solid var(--color-outline);padding:0 0 var(--space-1);text-decoration:none;white-space:nowrap;cursor:pointer;transition:border-color .15s ease,color .15s ease}
+.tlink:hover{border-bottom-color:var(--accent-hover);color:var(--accent-hover)}
+.section{padding-top:var(--space-8)}
+.section-title{font-family:var(--font-heading);font-size:var(--font-size-h2);font-weight:var(--font-weight-h2);line-height:var(--line-height-h2);color:var(--color-foreground);margin:0 0 var(--space-2)}
+.section-sub{font-size:var(--font-size-lead);font-weight:var(--font-weight-lead);line-height:var(--line-height-lead);color:var(--color-muted-foreground);margin:0 0 var(--space-7)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:var(--space-7) var(--space-6)}
+.tile{display:flex;flex-direction:column}
+.tile .media{position:relative;width:100%;aspect-ratio:4/5;margin-bottom:var(--space-3);background:var(--color-muted);border-radius:var(--radius-sm);transition:opacity .25s ease}
+.tile:hover .media{opacity:.92}
+.tile .badge{position:absolute;top:var(--space-2);left:var(--space-2);padding:var(--space-1) var(--space-2);font-size:var(--font-size-caption);letter-spacing:.12em;color:var(--foreground-secondary);background:var(--color-surface);border:1px solid var(--color-border)}
+.tile .name{margin:0 0 var(--space-1);font-family:var(--font-display);font-size:var(--type-body-md);font-weight:var(--font-weight-h4);line-height:var(--line-height-h3);color:var(--color-foreground)}
+.tile:hover .name{text-decoration:underline;text-underline-offset:4px}
+.tile .price{margin:0 0 var(--space-3);font-family:var(--font-display);font-size:var(--font-size-lead);font-weight:var(--font-weight-h4);color:var(--color-foreground);font-variant-numeric:tabular-nums}
+.benefits{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:var(--space-6)}
+.b-card{display:flex;flex-direction:column;padding:var(--space-6);background:var(--color-surface);border:0;border-top:2px solid var(--color-primary);border-radius:var(--radius-sm)}
+.b-title{font-family:var(--font-heading);font-size:var(--font-size-h3);font-weight:var(--font-weight-h3);line-height:var(--line-height-h3);color:var(--color-foreground);margin:0 0 var(--space-2)}
+.b-body{font-size:var(--font-size-body);line-height:var(--line-height-body);color:var(--color-muted-foreground);margin:0 0 var(--space-5)}
+.b-card .tlink{margin-top:auto;align-self:flex-start}
+.newsletter{text-align:center}
+.nl-field{max-width:420px;margin:0 auto;text-align:left}
+.f-label{display:block;font-size:var(--font-size-caption);font-weight:var(--font-weight-caption);color:var(--color-muted-foreground);margin-bottom:var(--space-1)}
+.f-line{display:flex;align-items:center;gap:var(--space-3)}
+.inp{flex:1;min-width:0;font-family:var(--font-family-base);font-size:var(--font-size-body);color:var(--color-foreground);background:transparent;border:0;border-bottom:1px solid var(--color-border);padding:var(--space-3) 0;transition:border-color .15s ease}
+.inp::placeholder{color:var(--color-muted-foreground)}
+.inp:focus{outline:none;border-bottom-color:var(--accent)}
+.nl-done{font-family:var(--font-display);font-size:var(--font-size-h3);font-weight:var(--font-weight-h3);line-height:var(--line-height-h3);color:var(--color-foreground);margin:var(--space-5) 0 0}
+.site-footer{margin-top:var(--space-8);border-top:1px solid var(--color-border);padding:var(--space-7) 0 var(--space-6)}
+.footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-6)}
+.f-title{font-size:var(--font-size-caption);font-weight:var(--font-weight-eyebrow);letter-spacing:.14em;color:var(--color-foreground);margin:0 0 var(--space-4)}
+.f-links{display:flex;flex-direction:column;gap:var(--space-2)}
+.f-links a{font-size:var(--font-size-caption);letter-spacing:.12em;color:var(--color-muted-foreground);text-decoration:none}
+.f-links a:hover{color:var(--color-foreground);text-decoration:underline;text-underline-offset:4px}
+.f-bottom{display:flex;justify-content:space-between;gap:var(--space-3);margin-top:var(--space-7);padding-top:var(--space-5);border-top:1px solid var(--color-border);font-size:var(--font-size-caption);letter-spacing:.12em;color:var(--color-muted-foreground)}
+.scrim{position:fixed;inset:0;z-index:30;background:var(--lux-warm-900);opacity:0;pointer-events:none;transition:opacity .25s ease}
+.scrim.open{opacity:.4;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;bottom:0;z-index:40;width:380px;max-width:100vw;display:flex;flex-direction:column;background:var(--color-surface);border-left:1px solid var(--color-border);box-shadow:var(--shadow-5);transform:translateX(102%);transition:transform .3s ease}
+.drawer.open{transform:translateX(0)}
+.drawer-head{display:flex;align-items:baseline;justify-content:space-between;padding:var(--space-5) var(--space-6);border-bottom:1px solid var(--color-border)}
+.drawer-title{font-family:var(--font-display);font-size:var(--font-size-h3);font-weight:var(--font-weight-h3);line-height:var(--line-height-h3);margin:0}
+.drawer-count{font-size:var(--font-size-caption);letter-spacing:.12em;color:var(--color-muted-foreground);font-variant-numeric:tabular-nums}
+.drawer-items{flex:1;list-style:none;margin:0;padding:0 var(--space-6);overflow-y:auto}
+.li{display:flex;gap:var(--space-4);padding:var(--space-4) 0}
+.li + .li{border-top:1px solid var(--color-border)}
+.thumb{width:64px;height:64px;flex:none;background:var(--color-muted);border-radius:var(--radius-sm)}
+.li-info{flex:1;min-width:0}
+.li-name{margin:0 0 var(--space-1);font-size:var(--type-body-sm);line-height:var(--line-height-body);color:var(--color-foreground)}
+.li-meta{margin:0 0 var(--space-2);font-size:var(--font-size-caption);letter-spacing:.06em;color:var(--color-muted-foreground);font-variant-numeric:tabular-nums}
+.stepper{display:inline-flex;align-items:center;gap:var(--space-3)}
+.qty-btn{width:var(--size-icon-lg);height:var(--size-icon-lg);display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--color-border);border-radius:var(--radius-sm);background:transparent;color:var(--color-foreground);font-family:var(--font-family-base);font-size:var(--type-body-sm);line-height:1;cursor:pointer;transition:border-color .15s ease,background .15s ease}
+.qty-btn:hover{border-color:var(--color-muted-foreground);background:var(--color-muted)}
+.qty-num{min-width:1em;text-align:center;font-size:var(--type-body-sm);font-variant-numeric:tabular-nums}
+.li-total{align-self:flex-start;font-family:var(--font-display);font-size:var(--type-body-md);color:var(--color-foreground);font-variant-numeric:tabular-nums;white-space:nowrap}
+.drawer-foot{padding:var(--space-5) var(--space-6) var(--space-6);border-top:1px solid var(--color-border)}
+.subtotal{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:var(--space-5)}
+.subtotal-label{font-size:var(--font-size-caption);letter-spacing:.14em;color:var(--color-muted-foreground)}
+.subtotal-num{font-family:var(--font-display);font-size:var(--font-size-h3);font-weight:var(--font-weight-h3);color:var(--color-foreground);font-variant-numeric:tabular-nums}
+.quiet-link{display:block;width:100%;margin-top:var(--space-4);border:0;background:none;padding:0;text-align:center;font-family:var(--font-family-base);font-size:var(--font-size-caption);letter-spacing:.14em;text-indent:.14em;color:var(--color-muted-foreground);text-decoration:none;cursor:pointer}
+.quiet-link:hover{color:var(--color-foreground);text-decoration:underline;text-underline-offset:4px}
+.empty{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:var(--space-4);padding:var(--space-6);text-align:center}
+.empty-title{margin:0;font-family:var(--font-display);font-size:var(--font-size-h4);font-weight:var(--font-weight-h4);line-height:var(--line-height-h4);color:var(--color-foreground)}
+@media (max-width:860px){
+.menu{display:none}
+.hero-block{padding:var(--space-6);margin-top:var(--space-5)}
+.section{padding-top:var(--space-7)}
+.footer-grid{grid-template-columns:repeat(2,1fr);gap:var(--space-5)}
+.f-bottom{flex-direction:column}
+}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel" data-presets="react">
+const { useState, useEffect } = React;
+
+const PRODUCTS = [
+  { id: "p1", name: "小牛皮手袋 · 经典系列", price: 12800, badge: "新品登场" },
+  { id: "p2", name: "羊绒围巾", price: 3200 },
+  { id: "p3", name: "真皮乐福鞋", price: 6400 },
+  { id: "p4", name: "丝绒手拿包", price: 4800 },
+  { id: "p5", name: "珍珠耳饰", price: 2600 },
+  { id: "p6", name: "山羊绒毯", price: 9600 }
+];
+
+const byId = (id) => PRODUCTS.find((p) => p.id === id);
+const fmt = (n) => "¥ " + n.toLocaleString("zh-CN");
+
+function Announcement() {
+  return <div className="announce">限时臻选 · 会员优先购</div>;
+}
+
+function Header({ count, onOpenBag }) {
+  return (
+    <header className="site-header">
+      <div className="container header-grid">
+        <nav className="menu">
+          <a className="nav-link" href="#products">经典系列</a>
+          <a className="nav-link" href="#hero">新品登场</a>
+          <a className="nav-link" href="#products">臻品推荐</a>
+        </nav>
+        <a className="wordmark" href="#hero">99999999</a>
+        <nav className="actions">
+          <a className="nav-link" href="#">搜索</a>
+          <a className="nav-link" href="#benefits">会员礼遇</a>
+          <button className="nav-link bag-btn" type="button" onClick={onOpenBag}>
+            购物袋{count > 0 ? " (" + count + ")" : ""}
+          </button>
+        </nav>
+      </div>
+    </header>
+  );
+}
+
+function Hero() {
+  return (
+    <section className="container" id="hero">
+      <div className="hero-block">
+        <p className="eyebrow">限时臻选 · 秋季首发</p>
+        <h1 className="hero-title">于极简之中，致敬永恒</h1>
+        <p className="hero-body">甄选意大利小牛皮与蒙古山羊绒，以世代相传的手工艺，打磨经得起时间凝视的每一件臻品。</p>
+        <a className="btn btn-outline" href="#products">查看详情</a>
+      </div>
+    </section>
+  );
+}
+
+function ProductGrid({ onAdd }) {
+  return (
+    <section className="container section" id="products">
+      <p className="eyebrow">臻品推荐</p>
+      <h2 className="section-title">本季臻选</h2>
+      <p className="section-sub">每一件，皆以时间打磨。</p>
+      <div className="grid">
+        {PRODUCTS.map((p) => (
+          <article className="tile" key={p.id}>
+            <div className="media">{p.badge ? <span className="badge">{p.badge}</span> : null}</div>
+            <h3 className="name">{p.name}</h3>
+            <p className="price">{fmt(p.price)}</p>
+            <button className="btn btn-primary btn-sm btn-block" type="button" onClick={() => onAdd(p.id)}>加入购物袋</button>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+const BENEFITS = [
+  { title: "新品优先购", body: "每季新品上线前 48 小时，会员可优先选购。" },
+  { title: "生日礼遇", body: "生日当月尊享专属贺礼与双倍积分。" },
+  { title: "私人搭配顾问", body: "一对一造型建议，尊享专人服务。" }
+];
+
+function Benefits() {
+  return (
+    <section className="container section" id="benefits">
+      <p className="eyebrow">会员礼遇</p>
+      <h2 className="section-title">臻选会员计划</h2>
+      <p className="section-sub">以长期陪伴，回馈每一次选择。</p>
+      <div className="benefits">
+        {BENEFITS.map((b) => (
+          <article className="b-card" key={b.title}>
+            <h3 className="b-title">{b.title}</h3>
+            <p className="b-body">{b.body}</p>
+            <a className="tlink" href="#">查看详情</a>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function Newsletter() {
+  const [email, setEmail] = useState("");
+  const [done, setDone] = useState(false);
+
+  if (done) {
+    return (
+      <section className="container section newsletter" id="newsletter">
+        <p className="eyebrow">品牌通信</p>
+        <h2 className="section-title">订阅品牌通信</h2>
+        <p className="nl-done">感谢订阅</p>
+      </section>
+    );
+  }
+  return (
+    <section className="container section newsletter" id="newsletter">
+      <p className="eyebrow">品牌通信</p>
+      <h2 className="section-title">订阅品牌通信</h2>
+      <p className="section-sub">第一时间获知新品与礼遇资讯。</p>
+      <div className="nl-field">
+        <label className="f-label" htmlFor="nl-email">电子邮件地址</label>
+        <form className="f-line" onSubmit={(e) => { e.preventDefault(); setDone(true); }}>
+          <input id="nl-email" className="inp" type="email" placeholder="name@example.com" value={email} onChange={(e) => setEmail(e.target.value)} />
+          <button className="tlink" type="submit">订阅</button>
+        </form>
+      </div>
+    </section>
+  );
+}
+
+const FOOTER_COLS = [
+  { title: "经典系列", links: ["手袋", "围巾", "鞋履"] },
+  { title: "新品登场", links: ["秋季新品", "限时臻选", "预览预约"] },
+  { title: "会员礼遇", links: ["会员计划", "积分礼遇", "生日贺礼"] },
+  { title: "联系我们", links: ["客服专线", "门店查询", "合作洽谈"] }
+];
+
+function Footer() {
+  return (
+    <footer className="site-footer">
+      <div className="container">
+        <div className="footer-grid">
+          {FOOTER_COLS.map((c) => (
+            <div key={c.title}>
+              <p className="f-title">{c.title}</p>
+              <div className="f-links">
+                {c.links.map((l) => <a key={l} href="#">{l}</a>)}
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="f-bottom">
+          <span>© 99999999 · 以匠心，致极简</span>
+          <span>保留所有权利</span>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+function CartDrawer({ open, cart, onClose, onStep, onBrowse }) {
+  const entries = Object.entries(cart);
+  const count = entries.reduce((a, [, q]) => a + q, 0);
+  const subtotal = entries.reduce((s, [id, q]) => s + byId(id).price * q, 0);
+
+  return (
+    <React.Fragment>
+      <div className={"scrim" + (open ? " open" : "")} onClick={onClose} />
+      <aside className={"drawer" + (open ? " open" : "")} role="dialog" aria-modal="true" aria-label="购物袋">
+        <div className="drawer-head">
+          <h2 className="drawer-title">购物袋</h2>
+          <span className="drawer-count">{count > 0 ? count + " 件" : ""}</span>
+        </div>
+        {entries.length === 0 ? (
+          <div className="empty">
+            <p className="empty-title">购物袋空空如也</p>
+            <button className="tlink" type="button" onClick={onBrowse}>去逛逛臻品推荐</button>
+          </div>
+        ) : (
+          <React.Fragment>
+            <ul className="drawer-items">
+              {entries.map(([id, q]) => {
+                const p = byId(id);
+                return (
+                  <li className="li" key={id}>
+                    <span className="thumb" aria-hidden="true"></span>
+                    <div className="li-info">
+                      <p className="li-name">{p.name}</p>
+                      <p className="li-meta">{fmt(p.price)}</p>
+                      <div className="stepper">
+                        <button className="qty-btn" type="button" aria-label={"减少 " + p.name + " 数量"} onClick={() => onStep(id, -1)}>−</button>
+                        <span className="qty-num">{q}</span>
+                        <button className="qty-btn" type="button" aria-label={"增加 " + p.name + " 数量"} onClick={() => onStep(id, 1)}>+</button>
+                      </div>
+                    </div>
+                    <span className="li-total">{fmt(p.price * q)}</span>
+                  </li>
+                );
+              })}
+            </ul>
+            <div className="drawer-foot">
+              <div className="subtotal">
+                <span className="subtotal-label">小计</span>
+                <span className="subtotal-num">{fmt(subtotal)}</span>
+              </div>
+              <button className="btn btn-primary btn-checkout" type="button">结算</button>
+              <button className="quiet-link" type="button" onClick={onClose}>继续选购</button>
+            </div>
+          </React.Fragment>
+        )}
+      </aside>
+    </React.Fragment>
+  );
+}
+
+function App() {
+  const [cart, setCart] = useState({});
+  const [open, setOpen] = useState(false);
+  const count = Object.values(cart).reduce((a, b) => a + b, 0);
+
+  const addToBag = (id) => {
+    setCart((c) => ({ ...c, [id]: (c[id] || 0) + 1 }));
+    setOpen(true);
+  };
+
+  const stepQty = (id, delta) => {
+    setCart((c) => {
+      const q = (c[id] || 0) + delta;
+      const next = { ...c };
+      if (q <= 0) delete next[id]; else next[id] = q;
+      return next;
+    });
+  };
+
+  const browseProducts = () => {
+    setOpen(false);
+    // 等抽屉解除 body 滚动锁后再定位，避免 scrollIntoView 落空
+    setTimeout(() => {
+      const el = document.getElementById("products");
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }, 80);
+  };
+
+  // 抽屉打开时锁定背景滚动
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+  }, [open]);
+
+  return (
+    <React.Fragment>
+      <Announcement />
+      <Header count={count} onOpenBag={() => setOpen(true)} />
+      <main>
+        <Hero />
+        <ProductGrid onAdd={addToBag} />
+        <Benefits />
+        <Newsletter />
+      </main>
+      <Footer />
+      <CartDrawer open={open} cart={cart} onClose={() => setOpen(false)} onStep={stepQty} onBrowse={browseProducts} />
+    </React.Fragment>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
+</html>

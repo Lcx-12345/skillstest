@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "kitType": "ecommerce",
+  "brandName": "99999999",
+  "planKind": "uikit-page-plan",
+  "coreComponents": ["button", "product-card", "navigation", "cart"],
+  "supportComponents": ["card", "input"],
+  "sections": [
+    { "id": "announcement", "component": "navigation", "variant": "announcement", "note": "slim top strip: 限时臻选 · 会员优先购" },
+    { "id": "header", "component": "navigation", "variant": "header-standard", "note": "wordmark + menu + bag action with live count" },
+    { "id": "hero", "component": "card", "variant": "editorial-image", "note": "editorial serif headline over muted block, primary CTA 查看详情" },
+    { "id": "product-grid", "component": "product-card", "variant": "tile-badge", "note": "臻品推荐 grid, 6 tiles, add-to-bag actions" },
+    { "id": "member-benefits", "component": "card", "variant": "accent-rule", "note": "会员礼遇 panels with gold top rule" },
+    { "id": "newsletter", "component": "input", "variant": "underline-default", "note": "underline email field + 订阅 link" },
+    { "id": "footer", "component": "navigation", "variant": "footer-links", "note": "quiet letter-spaced link columns" },
+    { "id": "cart-drawer", "component": "cart", "variant": "drawer-default", "note": "slide-in panel with line items, 小计, gold 结算" }
+  ],
+  "interactions": [
+    "navigation menu hover underline",
+    "add-to-bag increments bag count in header",
+    "cart drawer opens from bag action, closes via 继续选购 or overlay",
+    "quantity stepper updates 小计",
+    "newsletter subscribe shows quiet confirmation",
+    "product tile hover dims media and underlines name"
+  ],
+  "styleGuards": [
+    "all colors/radius/spacing/shadows/fonts via CSS variables from colors_and_type.css",
+    "champagne gold reserved for add-to-bag and checkout CTAs only",
+    "hairline 1px borders instead of shadows on cards",
+    "serif display headlines, letter-spaced caption labels",
+    "no external images — muted surface blocks for product media"
+  ]
+}

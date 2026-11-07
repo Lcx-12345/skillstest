@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>购物袋 · 99999999</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+body{margin:0;background:var(--color-background);font-family:var(--font-body);color:var(--color-foreground)}
+.wrap{display:flex;flex-wrap:wrap;justify-content:center;gap:var(--space-7);padding:var(--space-7) var(--space-5)}
+section{width:380px;max-width:100%;background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-sm);padding:var(--space-6)}
+h2{margin:0 0 var(--space-5)}
+ul{list-style:none;margin:0;padding:0}
+li{display:flex;gap:var(--space-4);padding:var(--space-4) 0}
+li+li{border-top:1px solid var(--color-border)}
+.thumb{width:64px;height:64px;flex:none;background:var(--color-muted);border-radius:var(--radius-sm)}
+.name{margin:0 0 var(--space-1)}
+.meta{margin:0;font-size:var(--font-size-caption);color:var(--color-muted-foreground)}
+.sub,.row{display:flex;justify-content:space-between;align-items:baseline}
+.sub{border-top:1px solid var(--color-border);padding:var(--space-4) 0 var(--space-5)}
+.row{padding:var(--space-3) 0;border-bottom:1px solid var(--color-border)}
+.total{border:0;padding:var(--space-5) 0 var(--space-4)}
+.num{font-variant-numeric:tabular-nums}
+.btn{display:block;width:100%;height:var(--size-button-lg);border:0;border-radius:var(--radius-sm);background:var(--color-primary);color:var(--color-on-primary);font-family:var(--font-body);font-size:var(--font-size-body);letter-spacing:.24em;text-indent:.24em;cursor:pointer}
+.btn:hover{background:var(--color-primary-hover)}
+.quiet{display:block;margin-top:var(--space-4);text-align:center;font-size:var(--font-size-caption);letter-spacing:.14em;text-indent:.14em;color:var(--color-muted-foreground);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+<section>
+<h2 class="lux-h3">购物袋</h2>
+<ul>
+<li><span class="thumb"></span><div><p class="lux-body name">小牛皮手袋</p><p class="meta">¥ 12,800 ×1</p></div></li>
+<li><span class="thumb"></span><div><p class="lux-body name">羊绒围巾</p><p class="meta">¥ 3,200 ×2</p></div></li>
+</ul>
+<div class="sub"><span class="meta">小计</span><span class="lux-price">¥ 19,200</span></div>
+<button class="btn">结算</button>
+<a class="quiet" href="#">继续选购</a>
+</section>
+<section>
+<h2 class="lux-h3">订单摘要</h2>
+<div class="row"><span class="lux-body">商品</span><span class="lux-body num">¥ 19,200</span></div>
+<div class="row"><span class="lux-body">运费</span><span class="lux-body num">¥ 0</span></div>
+<div class="row total"><span class="lux-body">合计</span><span class="lux-price">¥ 19,200</span></div>
+<button class="btn">结算</button>
+</section>
+</div>
+</body>
+</html>
