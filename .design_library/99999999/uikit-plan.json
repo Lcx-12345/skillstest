@@ -1,33 +1,114 @@
 {
   "schemaVersion": 1,
-  "kitType": "ecommerce",
-  "brandName": "99999999",
-  "planKind": "uikit-page-plan",
-  "coreComponents": ["button", "product-card", "navigation", "cart"],
-  "supportComponents": ["card", "input"],
-  "sections": [
-    { "id": "announcement", "component": "navigation", "variant": "announcement", "note": "slim top strip: 限时臻选 · 会员优先购" },
-    { "id": "header", "component": "navigation", "variant": "header-standard", "note": "wordmark + menu + bag action with live count" },
-    { "id": "hero", "component": "card", "variant": "editorial-image", "note": "editorial serif headline over muted block, primary CTA 查看详情" },
-    { "id": "product-grid", "component": "product-card", "variant": "tile-badge", "note": "臻品推荐 grid, 6 tiles, add-to-bag actions" },
-    { "id": "member-benefits", "component": "card", "variant": "accent-rule", "note": "会员礼遇 panels with gold top rule" },
-    { "id": "newsletter", "component": "input", "variant": "underline-default", "note": "underline email field + 订阅 link" },
-    { "id": "footer", "component": "navigation", "variant": "footer-links", "note": "quiet letter-spaced link columns" },
-    { "id": "cart-drawer", "component": "cart", "variant": "drawer-default", "note": "slide-in panel with line items, 小计, gold 结算" }
+  "headBoilerplate": "<link rel=\"stylesheet\" href=\"../../colors_and_type.css\">",
+  "corePreviewComponents": [
+    {
+      "slug": "button",
+      "reason": "fixed slot \"button\"; semantic=primary-cta:0.75; policy=fixed-slots-first",
+      "evidenceFile": "components/button.json",
+      "priority": 1,
+      "slot": "button"
+    },
+    {
+      "slug": "navigation",
+      "reason": "fixed slot \"navigation\"; semantic=header-bar:0.75; policy=fixed-slots-first",
+      "evidenceFile": "components/navigation.json",
+      "priority": 2,
+      "slot": "navigation"
+    },
+    {
+      "slug": "card",
+      "reason": "fixed slot \"card\"; semantic=editorial-feature:0.75; policy=fixed-slots-first",
+      "evidenceFile": "components/card.json",
+      "priority": 3,
+      "slot": "card"
+    },
+    {
+      "slug": "cart",
+      "reason": "fallback after fixed slots; semantic=cart-drawer:0.75; policy=fixed-slots-first",
+      "evidenceFile": "components/cart.json",
+      "priority": 4
+    },
+    {
+      "slug": "input",
+      "reason": "fallback after fixed slots; semantic=underline-field:0.75; policy=fixed-slots-first",
+      "evidenceFile": "components/input.json",
+      "priority": 5
+    },
+    {
+      "slug": "product-card",
+      "reason": "fallback after fixed slots; semantic=product-tile:0.75; policy=fixed-slots-first",
+      "evidenceFile": "components/product-card.json",
+      "priority": 6
+    }
   ],
-  "interactions": [
-    "navigation menu hover underline",
-    "add-to-bag increments bag count in header",
-    "cart drawer opens from bag action, closes via 继续选购 or overlay",
-    "quantity stepper updates 小计",
-    "newsletter subscribe shows quiet confirmation",
-    "product tile hover dims media and underlines name"
+  "supportEvidenceComponents": [],
+  "allowedComponents": [
+    "button",
+    "navigation",
+    "card",
+    "cart",
+    "input",
+    "product-card"
   ],
-  "styleGuards": [
-    "all colors/radius/spacing/shadows/fonts via CSS variables from colors_and_type.css",
-    "champagne gold reserved for add-to-bag and checkout CTAs only",
-    "hairline 1px borders instead of shadows on cards",
-    "serif display headlines, letter-spaced caption labels",
-    "no external images — muted surface blocks for product media"
+  "screenBlueprints": [
+    {
+      "name": null,
+      "componentSlugs": [],
+      "role": "primary"
+    },
+    {
+      "name": null,
+      "componentSlugs": [],
+      "role": "secondary"
+    },
+    {
+      "name": null,
+      "componentSlugs": [],
+      "role": "secondary"
+    }
+  ],
+  "productContext": {
+    "kitType": "ecommerce",
+    "productType": "E-commerce / Light-luxury Brand",
+    "dominantCopy": [],
+    "pageNames": [],
+    "selectedFrameNames": []
+  },
+  "selectionPolicy": "fixed-slots-first",
+  "slotAssignments": [
+    {
+      "slot": "button",
+      "slug": "button",
+      "reason": "name"
+    },
+    {
+      "slot": "navigation",
+      "slug": "navigation",
+      "reason": "name"
+    },
+    {
+      "slot": "card",
+      "slug": "card",
+      "reason": "name"
+    }
+  ],
+  "missingFixedSlots": [
+    "menu",
+    "tag",
+    "table"
+  ],
+  "fallbackComponents": [
+    "cart",
+    "input",
+    "product-card"
+  ],
+  "needsNarrative": false,
+  "forbiddenInventedComponents": [],
+  "lowConfidence": false,
+  "warnings": [
+    "missing-fixed-slot:menu",
+    "missing-fixed-slot:tag",
+    "missing-fixed-slot:table"
   ]
 }
