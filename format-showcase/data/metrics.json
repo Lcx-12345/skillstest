@@ -1,0 +1,29 @@
+{
+  "meta": {
+    "title": "AI 研发效能评估数据集",
+    "period": "2026-05 ~ 2026-10",
+    "generated_at": "2026-11-21",
+    "source": "TraeCode 迁移账号内部效能采样（示例数据）",
+    "currency": "CNY"
+  },
+  "task_types": [
+    { "task_type": "单元测试生成", "tasks": 1280, "automation_rate": 92.4, "avg_minutes": 6.8, "first_pass_rate": 87.5, "cost_cny": 12.4 },
+    { "task_type": "集成测试编排", "tasks": 640, "automation_rate": 78.6, "avg_minutes": 18.2, "first_pass_rate": 74.2, "cost_cny": 26.8 },
+    { "task_type": "代码评审辅助", "tasks": 2100, "automation_rate": 84.1, "avg_minutes": 4.2, "first_pass_rate": 91.3, "cost_cny": 9.6 },
+    { "task_type": "存量代码重构", "tasks": 380, "automation_rate": 62.5, "avg_minutes": 46.5, "first_pass_rate": 66.8, "cost_cny": 41.2 },
+    { "task_type": "技术文档编写", "tasks": 560, "automation_rate": 88.9, "avg_minutes": 12.4, "first_pass_rate": 93.1, "cost_cny": 7.3 },
+    { "task_type": "线上问题定位", "tasks": 920, "automation_rate": 58.3, "avg_minutes": 33.7, "first_pass_rate": 61.5, "cost_cny": 38.9 },
+    { "task_type": "SQL 与查询优化", "tasks": 240, "automation_rate": 71.8, "avg_minutes": 22.9, "first_pass_rate": 69.4, "cost_cny": 15.2 },
+    { "task_type": "CI 流水线维护", "tasks": 150, "automation_rate": 94.0, "avg_minutes": 9.6, "first_pass_rate": 88.7, "cost_cny": 5.1 },
+    { "task_type": "需求拆解澄清", "tasks": 470, "automation_rate": 66.2, "avg_minutes": 27.3, "first_pass_rate": 72.8, "cost_cny": 11.4 },
+    { "task_type": "发布与回滚脚本", "tasks": 190, "automation_rate": 89.5, "avg_minutes": 8.4, "first_pass_rate": 90.2, "cost_cny": 6.3 }
+  ],
+  "monthly_trend": [
+    { "month": "2026-05", "tasks": 980, "avg_minutes": 17.4, "automation_rate": 74.2 },
+    { "month": "2026-06", "tasks": 1120, "avg_minutes": 16.8, "automation_rate": 76.5 },
+    { "month": "2026-07", "tasks": 1250, "avg_minutes": 16.1, "automation_rate": 77.8 },
+    { "month": "2026-08", "tasks": 1180, "avg_minutes": 15.9, "automation_rate": 78.9 },
+    { "month": "2026-09", "tasks": 1340, "avg_minutes": 15.1, "automation_rate": 79.8 },
+    { "month": "2026-10", "tasks": 1060, "avg_minutes": 14.6, "automation_rate": 80.7 }
+  ]
+}

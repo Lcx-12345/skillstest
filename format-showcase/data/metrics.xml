@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report title="AI 研发效能评估报告" period="2026-05 ~ 2026-10" generated="2026-11-21">
+  <summary>
+    <totalTasks>6930</totalTasks>
+    <totalCostCny>119684.0</totalCostCny>
+    <avgCostPerTaskCny>17.27</avgCostPerTaskCny>
+    <weightedAutomationRate>79.6</weightedAutomationRate>
+    <weightedFirstPassRate>81.8</weightedFirstPassRate>
+    <weightedAvgMinutes>15.3</weightedAvgMinutes>
+  </summary>
+  <taskTypes>
+    <item taskType="单元测试生成" tasks="1280" automationRate="92.4" avgMinutes="6.8" firstPassRate="87.5" costCny="12.4"/>
+    <item taskType="集成测试编排" tasks="640" automationRate="78.6" avgMinutes="18.2" firstPassRate="74.2" costCny="26.8"/>
+    <item taskType="代码评审辅助" tasks="2100" automationRate="84.1" avgMinutes="4.2" firstPassRate="91.3" costCny="9.6"/>
+    <item taskType="存量代码重构" tasks="380" automationRate="62.5" avgMinutes="46.5" firstPassRate="66.8" costCny="41.2"/>
+    <item taskType="技术文档编写" tasks="560" automationRate="88.9" avgMinutes="12.4" firstPassRate="93.1" costCny="7.3"/>
+    <item taskType="线上问题定位" tasks="920" automationRate="58.3" avgMinutes="33.7" firstPassRate="61.5" costCny="38.9"/>
+    <item taskType="SQL 与查询优化" tasks="240" automationRate="71.8" avgMinutes="22.9" firstPassRate="69.4" costCny="15.2"/>
+    <item taskType="CI 流水线维护" tasks="150" automationRate="94.0" avgMinutes="9.6" firstPassRate="88.7" costCny="5.1"/>
+    <item taskType="需求拆解澄清" tasks="470" automationRate="66.2" avgMinutes="27.3" firstPassRate="72.8" costCny="11.4"/>
+    <item taskType="发布与回滚脚本" tasks="190" automationRate="89.5" avgMinutes="8.4" firstPassRate="90.2" costCny="6.3"/>
+  </taskTypes>
+</report>

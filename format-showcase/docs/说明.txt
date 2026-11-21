@@ -1,0 +1,33 @@
+格式演示 · 说明
+================
+
+主题：2026 Q4 AI 研发效能评估（示例数据集）
+
+本目录用于展示当前助手可生成的各类文件格式产物。所有产物围绕同一份数据集
+(data/metrics.json) 生成，指标口径完全一致，便于横向比对。
+
+产物清单
+--------
+docs/     Markdown 报告、纯文本说明、Word 文档、PDF 报告
+slides/   PowerPoint 演示文稿、HTML 演示页（slides.html）
+data/     Excel 工作簿、CSV、TSV、JSON、YAML、TOML、INI、XML、SQL、SQLite、Parquet
+media/    AI 生成插画 JPG、数据图表 PNG/JPG、SVG 标志、MP4 视频、WAV 音频
+code/     Python / TypeScript / Go / Java / Rust / C / C++ / Shell 示例
+web/      自包含 HTML 报告（ECharts 可视化）
+config/   Dockerfile、Makefile、.gitignore
+上级目录/  format-showcase.zip（全部产物的打包）
+
+数据口径
+--------
+任务总量        6,930 个
+加权自动化率    79.6%
+加权一次通过率  81.8%
+加权平均耗时    15.3 分钟
+总调用成本      ¥119,684（单任务均值 ¥17.3）
+
+查看方式
+--------
+1. HTML 报告：直接用浏览器打开 web/index.html
+2. HTML 演示：浏览器打开 slides/slides.html，使用方向键翻页
+3. Excel：用 Excel / WPS / LibreOffice 打开 AI研发效能评估.xlsx
+4. PDF：任意阅读器打开 AI研发效能评估报告.pdf

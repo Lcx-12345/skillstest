@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" role="img" aria-label="TraeCode 多格式产物标识">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1C7293"/>
+      <stop offset="100%" stop-color="#065A82"/>
+    </linearGradient>
+  </defs>
+  <rect width="240" height="240" rx="36" fill="url(#g)"/>
+  <g fill="none" stroke="#CADCFC" stroke-width="7" stroke-linecap="round">
+    <path d="M64 62 L42 120 L64 178"/>
+    <path d="M176 62 L198 120 L176 178"/>
+  </g>
+  <path d="M96 70 L146 120 L96 170" fill="none" stroke="#02C39A" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="120" cy="120" r="7" fill="#FFFFFF"/>
+</svg>
