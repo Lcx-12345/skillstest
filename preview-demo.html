@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web 预览工具演示</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(18px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 20px;
+      padding: 48px 56px;
+      max-width: 520px;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    }
+    h1 { font-size: 32px; margin-bottom: 12px; letter-spacing: 1px; }
+    p { font-size: 15px; line-height: 1.7; opacity: 0.9; margin-bottom: 24px; }
+    .btn {
+      display: inline-block;
+      padding: 12px 28px;
+      border-radius: 999px;
+      background: #fff;
+      color: #764ba2;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: transform .15s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .counter {
+      margin-top: 20px;
+      font-size: 14px;
+      opacity: 0.85;
+    }
+    code {
+      background: rgba(0, 0, 0, 0.25);
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>🌟 Web 预览工具演示</h1>
+    <p>这是一个由 TRAE 启动的本地静态页面，用来展示 <code>OpenPreview</code> 的调用与展示效果。</p>
+    <button class="btn" onclick="hit()">点我 +1</button>
+    <div class="counter">点击次数：<span id="count">0</span></div>
+  </div>
+  <script>
+    let n = 0;
+    function hit() {
+      n += 1;
+      document.getElementById('count').textContent = n;
+    }
+  </script>
+</body>
+</html>
